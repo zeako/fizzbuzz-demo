@@ -3,9 +3,10 @@ A simple `fizzbuzz` express app.
 Exposes a `POST /fizzbuzz` endpoint which expects the following json payload:
 ```json
 {
-    "count": 5 // any numeric value
+    "count": 5
 }
 ```
+`count` expected to be of Number type.
 
 It returns:
 ```json
