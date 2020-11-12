@@ -16,9 +16,22 @@ router
             });
         }
 
+        // business logic is embedded in router since the scope is pretty small.
+        // we could enable better separation by moving business logic related code to separate folder.
+        // also, we cloud move response handling to a separate controller file.
+        var c = req.body.count;
+        var ans = "";
+        if (c % 15 == 0) {
+            ans = "fizzbuzz";
+        } else if (c % 3 == 0) {
+            ans = "fizz";
+        } else if (c % 5 == 0) {
+            ans = "buzz";
+        }
+
         res.json({
             "errors": [],
-            "response": "placeholder"
+            "response": ans
         })
     })
     .all(function (req, res) {
